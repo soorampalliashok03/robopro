@@ -2,7 +2,7 @@
 # Build
 #
 FROM debian:10 AS build
-RUN apt-get update && apt-get -y install maven
+RUN sudo dnf update -y && sudo dnf install -y maven
 WORKDIR /opt/shipping
 COPY pom.xml /opt/shipping/
 RUN mvn dependency:resolve
