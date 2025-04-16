@@ -1,0 +1,18 @@
+version: "3.9"
+networks:
+  robopro:
+   driver: bridge
+services:
+  web:
+   image: web:v1
+   container_name: web
+   depends_on:
+   - catalouge
+  mongodb:
+   image: mongodb:v1
+   container_name: mongodb
+  catalouge:
+   image: catalouge:v1
+   container_name: catalouge
+   depends_on:
+   - mongodb
