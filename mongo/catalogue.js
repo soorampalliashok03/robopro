@@ -1,7 +1,7 @@
 //
 // Products
 //
-db = db.getSiblingDB('catalogue');
+db = db.getSiblingDB('catalouge');
 db.products.insertMany([
     {sku: 'Watson', name: 'Watson', description: 'Probably the smartest AI on the planet', price: 2001, instock: 2, categories: ['Artificial Intelligence']},
     {sku: 'Ewooid', name: 'Ewooid', description: 'Fully sentient assistant', price: 200, instock: 0, categories: ['Artificial Intelligence']},

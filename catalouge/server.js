@@ -154,12 +154,12 @@ app.get('/search/:text', (req, res) => {
 // set up Mongo
 function mongoConnect() {
     return new Promise((resolve, reject) => {
-        var mongoURL = process.env.MONGO_URL || 'mongodb://mongodb:27017/catalogue';
+        var mongoURL = process.env.MONGO_URL || 'mongodb://mongodb:27017/catalouge';
         mongoClient.connect(mongoURL, (error, client) => {
             if(error) {
                 reject(error);
             } else {
-                db = client.db('catalogue');
+                db = client.db('catalouge');
                 collection = db.collection('products');
                 resolve('connected');
             }
@@ -181,7 +181,7 @@ function mongoLoop() {
 mongoLoop();
 
 // fire it up!
-const port = process.env.CATALOGUE_SERVER_PORT || '8080';
+const port = process.env.catalouge_SERVER_PORT || '8080';
 app.listen(port, () => {
     logger.info('Started on port', port);
 });

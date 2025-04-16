@@ -81,7 +81,7 @@
                 $scope.data.products[category] = null;
             } else {
                 $http({
-                    url: '/api/catalogue/products/' + category,
+                    url: '/api/catalouge/products/' + category,
                     method: 'GET'
                 }).then((res) => {
                     $scope.data.products[category] = res.data;
@@ -100,7 +100,7 @@
 
         function getCategories() {
             $http({
-                url: '/api/catalogue/categories',
+                url: '/api/catalouge/categories',
                 method: 'GET'
             }).then((res) => {
                 $scope.data.categories = res.data;
@@ -173,7 +173,7 @@
         function search(text) {
             if(text) {
                 $http({
-                    url: '/api/catalogue/search/' + text,
+                    url: '/api/catalouge/search/' + text,
                     method: 'GET'
                 }).then((res) => {
                     console.log('search results', res.data);
@@ -241,7 +241,7 @@
 
         function loadProduct(sku) {
             $http({
-                url: '/api/catalogue/product/' + sku,
+                url: '/api/catalouge/product/' + sku,
                 method: 'GET'
             }).then((res) => {
                 $scope.data.product = res.data;
