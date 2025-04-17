@@ -44,7 +44,7 @@ services:
    image: mongodb:v1
    container_name: mongodb
    volumes:
-   - mongodb: /data/db
+   - mongodb:/data/db
   catalouge:
    image: catalouge:v1
    container_name: catalouge
@@ -54,7 +54,7 @@ services:
    image: redis
    container_name: redis
    volumes:
-   - redis: /data
+   - redis:/data
   user:
    image: user:v1
    container_name: user
@@ -71,7 +71,7 @@ services:
    image: mysql:v1
    container_name: mysql
    volumes:
-   - mysql: /var/lib/mysql
+   - mysql:/var/lib/mysql
   shipping:
    image: shipping:v1
    container_name: shipping
@@ -81,7 +81,7 @@ services:
    image: rabbitmq
    container_name: rabbitmq
    volumes:
-   - rabbitmq: /var/lib/rabbitmq
+   - rabbitmq:/var/lib/rabbitmq
   payment:
    image: payment:v1
    container_name: payment
